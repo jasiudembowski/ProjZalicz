@@ -1,12 +1,15 @@
-package com.company;
+package Creatures;
 
-public class Animal implements Sellable{
+import com.company.Human;
+import com.company.Sellable;
+
+public abstract class Animal implements Sellable,Feedable {
 
     private final String species;
     private double weight;
 
 
-    Animal(String species){
+    public Animal(String species){
         this.species = species;
         if(species.equals("Mammal")) this.weight = 60;
         if(species.equals("Bird")) this.weight = 5;
@@ -32,7 +35,7 @@ public class Animal implements Sellable{
 
     }
 
-    void feed(){
+    public void feed(){
         if(this.weight <=0){
             System.out.println("Zwierze nie żyje");
         }
@@ -40,7 +43,19 @@ public class Animal implements Sellable{
             this.weight += 2;
         }
     }
-    void takeForAWalk(){
+
+    @Override
+    public void feed(double foodWeight) {
+        if(this.weight <=0){
+            System.out.println("Zwierze nie żyje");
+        }
+        else {
+            this.weight += foodWeight;
+        }
+    }
+
+
+    public void takeForAWalk(){
         if(this.weight <= 0){
             System.out.println("Zwierze nie żyje");
         }else{
@@ -53,7 +68,7 @@ public class Animal implements Sellable{
 
     @Override
     public String toString() {
-        return "com.company.Animal{" +
+        return "Creatures.Animal{" +
                 "species='" + species + '\'' +
                 ", weight=" + weight +
                 '}';

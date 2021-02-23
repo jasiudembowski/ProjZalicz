@@ -61,7 +61,7 @@ public class Car extends Device implements Sellable {
 
     @Override
     public void turnOn() {
-        System.out.println("Samochod odaplil");
+        System.out.println("Samochod odpalil");
     }
 
     @Override

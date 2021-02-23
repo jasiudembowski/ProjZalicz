@@ -1,5 +1,6 @@
 package com.company;
 
+import Creatures.Animal;
 import devices.Car;
 import devices.Phone;
 
