@@ -1,3 +1,5 @@
+import devices.Car;
+
 import java.util.Date;
 
 public class Human {
@@ -22,7 +24,7 @@ public class Human {
 
     public void setCar(Car car){
         if(this.salary > car.getValue()) {
-            System.out.println("Udalo sie kupic za gotowke")
+            System.out.println("Udalo sie kupic za gotowke");
             this.car = car;
         }
         else if(this.salary > car.getValue()/12){
@@ -44,9 +46,15 @@ public class Human {
 
     }
 
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Human{" +
+                "pet=" + pet +
+                ", name='" + name + '\'' +
+                ", age='" + age + '\'' +
+                ", car=" + car +
+                ", salary=" + salary +
+                ", getSalaryLastDate=" + getSalaryLastDate +
+                '}';
+    }
 }
