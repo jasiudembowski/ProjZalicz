@@ -4,6 +4,8 @@ import Creatures.Animal;
 import Creatures.FarmAnimal;
 import Creatures.Pet;
 import devices.Car;
+import devices.Electric;
+import devices.LPG;
 import devices.Phone;
 
 
@@ -20,11 +22,11 @@ public class Main {
 
         //test do zad 2
         Human human = new Human();
-        Car car = new Car("CLA 45", "Mercedes",270,200,"2005");
+        Car car = new LPG("CLA 45", "Mercedes",270,200,"2005");
         human.setCar(car);
 
         //test do zad 6
-        Car anotherCar = new Car("CLA 45", "Mercedes",270,200,"2005");
+        Car anotherCar = new Electric("CLA 45", "Mercedes",270,200,"2005");
         System.out.println("Czy auta sa takie same?" + car.equals(anotherCar) ); //tutaj juz sprawdzam z nadpisana metoda equals
 
 

@@ -5,16 +5,22 @@ import com.company.Sellable;
 
 import java.util.Objects;
 
-public class Car extends Device implements Sellable {
+public abstract class Car extends Device implements Sellable {
 
-    private double maxSpeed;
-    private int horsepower;
-    private double value;
+    protected double maxSpeed;
+    protected int horsepower;
+    protected double value;
+    protected double fuelLevel;
 
 
     public double getValue(){
         return this.value;
     }
+
+
+    public abstract void refuel();
+
+
 
     @Override
     public void sell(Human seller, Human buyer, Double price) {
@@ -34,12 +40,17 @@ public class Car extends Device implements Sellable {
 
     }
 
+
+
     public Car(String model,String producer,double maxSpeed, int horsepower,String yearOfProduction){
         this.model = model;
         this.producer = producer;
         this.maxSpeed = maxSpeed;
         this.horsepower = horsepower;
         this.yearOfProduction = yearOfProduction;
+    }
+    public Car(){
+
     }
 
     @Override
