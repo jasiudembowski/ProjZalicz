@@ -3,6 +3,7 @@ public class Car {
     private final String producer;
     private double maxSpeed;
     private int horsepower;
+    private double value;
 
     Car(String model,String producer,double maxSpeed, int horsepower){
         this.model = model;
