@@ -1,21 +1,28 @@
 package devices;
 
-public class Phone {
+public class Phone extends Device{
 
     private String number;
-    private String model;
 
-    public Phone(String number, String model){
+
+    public Phone(String number, String model,String producer){
         this.number = number;
         this.model = model;
+        this.producer = producer;
     }
 
+    @Override
+    public void turnOn() {
+        System.out.println("Telefon sie właczył");
+    }
 
     @Override
     public String toString() {
-        return "devices.Phone{" +
-                "number='" + number + '\'' +
+        return "Phone{" +
+                "producer='" + producer + '\'' +
                 ", model='" + model + '\'' +
+                ", yearOfProduction='" + yearOfProduction + '\'' +
+                ", number='" + number + '\'' +
                 '}';
     }
 }

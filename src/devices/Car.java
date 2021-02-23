@@ -2,9 +2,8 @@ package devices;
 
 import java.util.Objects;
 
-public class Car {
-    private final String model;
-    private final String producer;
+public class Car extends Device{
+
     private double maxSpeed;
     private int horsepower;
     private double value;
@@ -13,11 +12,12 @@ public class Car {
         return this.value;
     }
 
-    public Car(String model,String producer,double maxSpeed, int horsepower){
+    public Car(String model,String producer,double maxSpeed, int horsepower,String yearOfProduction){
         this.model = model;
         this.producer = producer;
         this.maxSpeed = maxSpeed;
         this.horsepower = horsepower;
+        this.yearOfProduction = yearOfProduction;
     }
 
     @Override
@@ -38,13 +38,19 @@ public class Car {
     }
 
     @Override
+    public void turnOn() {
+        System.out.println("Samochod odaplil");
+    }
+
+    @Override
     public String toString() {
-        return "devices.Car{" +
-                "model='" + model + '\'' +
-                ", producer='" + producer + '\'' +
-                ", maxSpeed=" + maxSpeed +
+        return "Car{" +
+                "maxSpeed=" + maxSpeed +
                 ", horsepower=" + horsepower +
                 ", value=" + value +
+                ", producer='" + producer + '\'' +
+                ", model='" + model + '\'' +
+                ", yearOfProduction='" + yearOfProduction + '\'' +
                 '}';
     }
 }
