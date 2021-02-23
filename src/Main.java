@@ -9,6 +9,12 @@ public class Main {
         fish.takeForAWalk();
         fish.feed();
 
+        //test do zad 2
+        Human human = new Human();
+        Car car = new Car("CLA 45", "Mercedes",270,200);
+        human.setCar(car);
+
+
 
 
 
