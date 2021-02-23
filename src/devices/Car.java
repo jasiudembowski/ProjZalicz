@@ -1,15 +1,37 @@
 package devices;
 
+import com.company.Human;
+import com.company.Sellable;
+
 import java.util.Objects;
 
-public class Car extends Device{
+public class Car extends Device implements Sellable {
 
     private double maxSpeed;
     private int horsepower;
     private double value;
 
+
     public double getValue(){
         return this.value;
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if(seller.getCar() != this) {
+            System.out.println("Sprzedajacy nie ma tego urzadzenia");
+            return;
+        }
+        if(buyer.getCash() < price){
+            System.out.println("Kupujacy nie ma wystarczajaco gotowki");
+        }
+        buyer.setCash(buyer.getCash() - price);
+        seller.setCash(seller.getCash() + price);
+        buyer.setCar(seller.getCar());
+        seller.setCar(null);
+
+        System.out.println("Samochod został sprzedany za "+ price);
+
     }
 
     public Car(String model,String producer,double maxSpeed, int horsepower,String yearOfProduction){

@@ -1,3 +1,5 @@
+package com.company;
+
 import devices.Car;
 import devices.Phone;
 
@@ -22,6 +24,7 @@ public class Main {
 
 
         Phone phone = new Phone("8493749378","3310","Nokia");
+        Phone anotherPhone = new Phone("38574937","S6","Iphone");
         System.out.println(fish.toString());
         System.out.println(car.toString());
         System.out.println(human.toString());
@@ -30,6 +33,12 @@ public class Main {
         //test do zad 7
         phone.turnOn();
         car.turnOn();
+
+        Human buyer = new Human(null,"John","19",car,1000000,null,100000,phone);
+        Human seller = new Human(fish,"Marc","20",anotherCar,100000,null,100000,anotherPhone);
+        fish.sell(seller,buyer,100.0);
+        //handel ludzmi jest niemozliwy poniewaz klasa human nie implementuje interfejsu salleable
+
 
 
 

@@ -7,6 +7,7 @@ public abstract class Device {
     protected String yearOfProduction;
 
 
+
     public abstract void turnOn();
 
 
