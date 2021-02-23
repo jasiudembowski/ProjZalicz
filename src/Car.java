@@ -5,6 +5,10 @@ public class Car {
     private int horsepower;
     private double value;
 
+    public double getValue(){
+        return this.value;
+    }
+
     Car(String model,String producer,double maxSpeed, int horsepower){
         this.model = model;
         this.producer = producer;

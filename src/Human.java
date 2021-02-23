@@ -20,6 +20,21 @@ public class Human {
         return this.car;
     }
 
+    public void setCar(Car car){
+        if(this.salary > car.getValue()) {
+            System.out.println("Udalo sie kupic za gotowke")
+            this.car = car;
+        }
+        else if(this.salary > car.getValue()/12){
+            System.out.println("Udalo sie kupic na kredyt");
+            this.car = car;
+        }
+        else{
+            System.out.println("Zapisz sie na studia i znajdz prace");
+        }
+
+    }
+
     public void setSalary(double salary){
         if(salary < 0 ) return;
         System.out.println("Nowe dane zostały wyslane do systemu ksiegowego");
@@ -30,9 +45,7 @@ public class Human {
     }
 
 
-    public void setCar(Car car){
-        this.car = car;
-    }
+
 
 
 
